@@ -37,6 +37,10 @@ local function init()
     vim.o.termguicolors = true
 
     vim.wo.wrap = false
+
+    vim.o.shiftwidth = 4
+    vim.o.tabstop = 4
+    vim.o.expandtab = true
 end
 
 return {
