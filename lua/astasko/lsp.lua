@@ -5,18 +5,10 @@ local treesitter = require 'nvim-treesitter.configs'
 local treesitter_context = require 'treesitter-context'
 
 local function getSnykToken()
-  local handle = io.popen("doppler secrets get SNYK_TOKEN --plain --config-dir ~/.doppler")
-
-  if not handle then
-    error("Failed to execute command to get Snyk token")
-  end
+  local handle = assert (io.popen("doppler secrets get SNYK_TOKEN --plain --config-dir ~/.doppler"))
 
   local result = handle:read("*a")
-  local success, exitType, exitCode = handle:close()
-
-  if not success or exitType ~= "exit" or exitCode ~= 0 then
-    error("Failed to retrieve Snyk token, command exited with code: " .. tostring(exitCode))
-  end
+  handle:close()
 
   result = result:match("^%s*(.-)%s*$")
 
