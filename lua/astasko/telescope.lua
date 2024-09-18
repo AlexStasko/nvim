@@ -52,7 +52,7 @@ local function init()
     builtin.find_files { cwd = vim.fn.stdpath 'config' }
   end, { desc = '[S]earch [N]eovim files' })
 
-  vim.keymap.set('n', '<leader>sa', '<CMD> lua require("telescope").extensions.notify.notify()<CR>',
+  vim.keymap.set('n', '<leader>sa', '<CMD>lua require("telescope").extensions.notify.notify()<CR>',
     { desc = '[S]earch [A]lerts from notify plugin' })
 end
 
