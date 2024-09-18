@@ -20,8 +20,6 @@ local function init()
     },
   }
 
-  telescope.load_extension('fzf')
-  telescope.load_extension('ui-select')
   telescope.load_extension('notify')
 
   vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
