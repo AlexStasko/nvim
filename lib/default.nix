@@ -43,13 +43,22 @@ in rec {
     vimPlugins.vim-floaterm
 
     # extras
+    vimPlugins.cmp-buffer
+    vimPlugins.cmp-cmdline
+    vimPlugins.cmp-nvim-lsp
+    vimPlugins.cmp-path
+
+    vimPlugins.cmp_luasnip
     vimPlugins.comment-nvim
     vimPlugins.conform-nvim
     vimPlugins.gitsigns-nvim
     vimPlugins.indent-blankline-nvim
     vimPlugins.lualine-nvim
+    vimPlugins.luasnip
+    vimPlugins.lspkind-nvim
     vimPlugins.noice-nvim
     vimPlugins.nui-nvim
+    vimPlugins.nvim-cmp
     vimPlugins.nvim-colorizer-lua
     vimPlugins.nvim-notify
     vimPlugins.nvim-treesitter-context
