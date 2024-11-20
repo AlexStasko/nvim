@@ -4,20 +4,20 @@ local rust_tools = require 'rust-tools'
 local treesitter = require 'nvim-treesitter.configs'
 local treesitter_context = require 'treesitter-context'
 
-local function getSnykToken()
-    local handle = assert(io.popen("doppler secrets get SNYK_TOKEN --plain --config-dir ~/.doppler"))
-
-    local result = handle:read("*a")
-    handle:close()
-
-    result = result:match("^%s*(.-)%s*$")
-
-    if result == "" then
-        error("Snyk token is empty")
-    end
-
-    return result
-end
+-- local function getSnykToken()
+--     local handle = assert(io.popen("doppler secrets get SNYK_TOKEN --plain --config-dir ~/.doppler"))
+--
+--     local result = handle:read("*a")
+--     handle:close()
+--
+--     result = result:match("^%s*(.-)%s*$")
+--
+--     if result == "" then
+--         error("Snyk token is empty")
+--     end
+--
+--     return result
+-- end
 
 local function init()
     local lsp_capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -113,16 +113,16 @@ local function init()
                 },
             },
         },
-        snyk_ls = {
-            init_options = {
-                activateSnykOpenSource = "true",
-                activateSnykCode = "true",
-                activateSnykIac = "true",
-                automaticAuthentication = "true",
-                token = getSnykToken(),
-                enableTrustedFoldersFeature = "false",
-            }
-        },
+        -- snyk_ls = {
+        --     init_options = {
+        --         activateSnykOpenSource = "true",
+        --         activateSnykCode = "true",
+        --         activateSnykIac = "true",
+        --         automaticAuthentication = "true",
+        --         token = getSnykToken(),
+        --         enableTrustedFoldersFeature = "false",
+        --     }
+        -- },
         terraformls = {},
         tsserver = {},
         yamlls = {
